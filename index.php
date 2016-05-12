@@ -13,7 +13,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php  require_once("navbar.php"); ?>
   <form action="mail.php" method="post" style="padding-left:10%;padding-right:10%;">
+    <input type="hidden" name="insert" value="True" />
+    <input type="hidden" name="email_name" value="default" />
     <?php
       if(isset($_SESSION["result"])) {
        if($_SESSION["result"] == 1) {
@@ -45,6 +48,12 @@
       <label for="email">BC Email Address:</label>
       <input required type="email" class="form-control" name="email" id="email"  <?php
       if(isset($_SESSION["email"])) echo "value=\"".$_SESSION["email"]."\""; ?>/>
+    </div>
+
+    <div class="form-group col-lg-6">
+      <label for="name">Customer's First Name:</label>
+      <input required type="name" class="form-control" name="name" id="name"  <?php
+      if(isset($_SESSION["name"])) echo "value=\"".$_SESSION["name"]."\""; ?>/>
     </div>
 
     <div class="form-group col-lg-6">

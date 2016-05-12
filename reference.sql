@@ -10,3 +10,9 @@ create table if not exists rebuilds (
   notes varchar(5000),
   primary key(id)
 );
+
+create table if not exists email (
+  name varchar(1000),
+  title varchar(10000),
+  message varchar(100000)
+);
